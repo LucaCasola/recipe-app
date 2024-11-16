@@ -1,0 +1,291 @@
+[
+  {
+    "id": "1",
+    "name": "Spaghetti Bolognese",
+    "description": "A classic Italian pasta dish with rich, meaty sauce.",
+    "imgUrl": "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Spaghetti-Bolognese-square-FS-0204.jpg",
+    "ingredients": [
+      { "name": "Spaghetti", "quantity": "200g" },
+      { "name": "Minced beef", "quantity": "100g" },
+      { "name": "Onion", "quantity": "1, chopped" },
+      { "name": "Garlic", "quantity": "2 cloves, minced" },
+      { "name": "Canned tomatoes", "quantity": "400g" },
+      { "name": "Olive oil", "quantity": "2 tbsp" },
+      { "name": "Salt and pepper", "quantity": "to taste" }
+    ],
+    "prepTime": 30,
+    "servings": 4,
+    "category": "Dinner",
+    "steps": [
+      {
+        "name": "Cook pasta",
+        "description": "Boil water in a large pot, add salt, and cook spaghetti until al dente."
+      },
+      {
+        "name": "Prepare sauce",
+        "description": "In a pan, heat olive oil, add onions and garlic, and sauté until golden. Add minced beef and cook until browned. Add canned tomatoes, salt, and pepper. Simmer for 20 minutes."
+      },
+      {
+        "name": "Combine",
+        "description": "Mix the cooked spaghetti with the sauce and serve hot."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Chicken Caesar Salad",
+    "description": "A healthy salad with grilled chicken and Caesar dressing.",
+    "imgUrl": "https://s23209.pcdn.co/wp-content/uploads/2023/01/220905_DD_Chx-Caesar-Salad_051.jpg",
+    "ingredients": [
+      { "name": "Chicken breast", "quantity": "200g" },
+      { "name": "Romaine lettuce", "quantity": "1" },
+      { "name": "Parmesan cheese", "quantity": "50g" },
+      { "name": "Croutons", "quantity": "100g" },
+      { "name": "Caesar dressing", "quantity": "to taste" },
+      { "name": "Salt and pepper", "quantity": "to taste" }
+    ],
+    "prepTime": 20,
+    "servings": 2,
+    "category": "Lunch",
+    "steps": [
+      {
+        "name": "Grill chicken",
+        "description": "Season chicken breast with salt and pepper, and grill until fully cooked. Slice into strips."
+      },
+      {
+        "name": "Prepare salad",
+        "description": "Chop romaine lettuce and place in a large bowl. Add croutons and grated parmesan cheese."
+      },
+      {
+        "name": "Combine",
+        "description": "Add grilled chicken strips to the salad and drizzle with Caesar dressing. Toss to combine."
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Beef Tacos",
+    "description": "Delicious beef tacos with fresh toppings.",
+    "imgUrl": "https://kaynutrition.com/wp-content/uploads/2023/08/shredded-beef-tacos.jpg",
+    "ingredients": [
+      { "name": "Ground beef", "quantity": "200g" },
+      { "name": "Taco shells", "quantity": "6" },
+      { "name": "Lettuce", "quantity": "1 cup, shredded" },
+      { "name": "Cheddar cheese", "quantity": "1 cup, shredded" },
+      { "name": "Tomato", "quantity": "1, diced" },
+      { "name": "Sour cream", "quantity": "to taste" },
+      { "name": "Taco seasoning", "quantity": "1 packet" }
+    ],
+    "prepTime": 25,
+    "servings": 3,
+    "category": "Dinner",
+    "steps": [
+      {
+        "name": "Cook beef",
+        "description": "In a pan, cook ground beef with taco seasoning until fully cooked."
+      },
+      {
+        "name": "Prepare toppings",
+        "description": "Chop lettuce and tomato, and shred cheese."
+      },
+      {
+        "name": "Assemble tacos",
+        "description": "Fill taco shells with cooked beef and top with lettuce, cheese, tomato, and sour cream."
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Vegetable Stir Fry",
+    "description": "A quick and healthy vegetable stir fry.",
+    "imgUrl": "https://kristineskitchenblog.com/wp-content/uploads/2024/01/vegetable-stir-fry-22-3.jpg",
+    "ingredients": [
+      { "name": "Broccoli", "quantity": "1 cup, chopped" },
+      { "name": "Carrot", "quantity": "1, sliced" },
+      { "name": "Bell pepper", "quantity": "1, sliced" },
+      { "name": "Soy sauce", "quantity": "2 tbsp" },
+      { "name": "Garlic", "quantity": "2 cloves, minced" },
+      { "name": "Olive oil", "quantity": "2 tbsp" },
+      { "name": "Salt and pepper", "quantity": "to taste" }
+    ],
+    "prepTime": 15,
+    "servings": 2,
+    "category": "Lunch",
+    "steps": [
+      {
+        "name": "Prepare vegetables",
+        "description": "Chop broccoli, carrot, and bell pepper."
+      },
+      {
+        "name": "Stir fry",
+        "description": "In a pan, heat olive oil, add garlic, and sauté for 1 minute. Add vegetables and stir fry for 5-7 minutes. Add soy sauce, salt, and pepper, and cook for another 2 minutes."
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Pancakes",
+    "description": "Fluffy pancakes perfect for breakfast.",
+    "imgUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2022/09/oatmeal-pancakes-500x500.jpg",
+    "ingredients": [
+      { "name": "Flour", "quantity": "1 cup" },
+      { "name": "Milk", "quantity": "1 cup" },
+      { "name": "Egg", "quantity": "1" },
+      { "name": "Baking powder", "quantity": "2 tsp" },
+      { "name": "Sugar", "quantity": "2 tbsp" },
+      { "name": "Salt", "quantity": "1/2 tsp" },
+      { "name": "Butter", "quantity": "2 tbsp, melted" }
+    ],
+    "prepTime": 20,
+    "servings": 4,
+    "category": "Breakfast",
+    "steps": [
+      {
+        "name": "Mix ingredients",
+        "description": "In a bowl, mix flour, baking powder, sugar, and salt. In another bowl, whisk milk, egg, and melted butter. Combine wet and dry ingredients."
+      },
+      {
+        "name": "Cook pancakes",
+        "description": "Heat a non-stick pan over medium heat. Pour batter onto the pan and cook until bubbles form on the surface. Flip and cook until golden brown."
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Grilled Cheese Sandwich",
+    "description": "A classic grilled cheese sandwich.",
+    "imgUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2023/01/grilled-cheese.jpg",
+    "ingredients": [
+      { "name": "Bread", "quantity": "2 slices" },
+      { "name": "Cheddar cheese", "quantity": "2 slices" },
+      { "name": "Butter", "quantity": "2 tbsp" }
+    ],
+    "prepTime": 10,
+    "servings": 1,
+    "category": "Lunch",
+    "steps": [
+      {
+        "name": "Prepare sandwich",
+        "description": "Butter one side of each bread slice. Place cheese between the unbuttered sides of the bread."
+      },
+      {
+        "name": "Grill sandwich",
+        "description": "Heat a pan over medium heat. Place the sandwich in the pan and cook until golden brown on both sides and cheese is melted."
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Tomato Soup",
+    "description": "A warm and comforting tomato soup.",
+    "imgUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2023/01/tomato-soup-recipe.jpg",
+    "ingredients": [
+      { "name": "Canned tomatoes", "quantity": "800g" },
+      { "name": "Onion", "quantity": "1, chopped" },
+      { "name": "Garlic", "quantity": "2 cloves, minced" },
+      { "name": "Vegetable broth", "quantity": "2 cups" },
+      { "name": "Olive oil", "quantity": "2 tbsp" },
+      { "name": "Salt and pepper", "quantity": "to taste" }
+    ],
+    "prepTime": 25,
+    "servings": 4,
+    "category": "Dinner",
+    "steps": [
+      {
+        "name": "Prepare ingredients",
+        "description": "Chop onion and garlic."
+      },
+      {
+        "name": "Cook soup",
+        "description": "In a pot, heat olive oil, add onion and garlic, and sauté until golden. Add canned tomatoes and vegetable broth. Simmer for 20 minutes. Blend until smooth."
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Chocolate Chip Cookies",
+    "description": "Delicious homemade chocolate chip cookies.",
+    "imgUrl": "https://static01.nyt.com/images/2022/02/12/dining/JT-Chocolate-Chip-Cookies/JT-Chocolate-Chip-Cookies-square640.jpg",
+    "ingredients": [
+      { "name": "Flour", "quantity": "2 cups" },
+      { "name": "Butter", "quantity": "1 cup, softened" },
+      { "name": "Sugar", "quantity": "1 cup" },
+      { "name": "Brown sugar", "quantity": "1 cup" },
+      { "name": "Eggs", "quantity": "2" },
+      { "name": "Vanilla extract", "quantity": "1 tsp" },
+      { "name": "Baking soda", "quantity": "1 tsp" },
+      { "name": "Salt", "quantity": "1/2 tsp" },
+      { "name": "Chocolate chips", "quantity": "2 cups" }
+    ],
+    "prepTime": 30,
+    "servings": 24,
+    "category": "Dessert",
+    "steps": [
+      {
+        "name": "Mix ingredients",
+        "description": "In a bowl, cream together butter, sugar, and brown sugar. Add eggs and vanilla extract. In another bowl, mix flour, baking soda, and salt. Combine wet and dry ingredients. Stir in chocolate chips."
+      },
+      {
+        "name": "Bake cookies",
+        "description": "Preheat oven to 350°F (175°C). Drop spoonfuls of dough onto a baking sheet. Bake for 10-12 minutes or until golden brown."
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Chicken Curry",
+    "description": "A flavorful chicken curry with spices.",
+    "imgUrl": "https://www.recipetineats.com/tachyon/2023/10/African-coconut-chicken-curry_3.jpg",
+    "ingredients": [
+      { "name": "Chicken breast", "quantity": "200g" },
+      { "name": "Onion", "quantity": "1, chopped" },
+      { "name": "Garlic", "quantity": "2 cloves, minced" },
+      { "name": "Coconut milk", "quantity": "400ml" },
+      { "name": "Curry powder", "quantity": "2 tbsp" },
+      { "name": "Olive oil", "quantity": "2 tbsp" },
+      { "name": "Salt and pepper", "quantity": "to taste" }
+    ],
+    "prepTime": 35,
+    "servings": 4,
+    "category": "Dinner",
+    "steps": [
+      {
+        "name": "Prepare ingredients",
+        "description": "Chop chicken, onion, and garlic."
+      },
+      {
+        "name": "Cook curry",
+        "description": "In a pot, heat olive oil, add onion and garlic, and sauté until golden. Add chicken and cook until browned. Add curry powder and coconut milk. Simmer for 20 minutes."
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Greek Salad",
+    "description": "A refreshing Greek salad with feta cheese.",
+    "imgUrl": "https://www.allrecipes.com/thmb/SkWzUVjyC9DRoefa4t7tjkPS0no=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/14373-GreekSaladi-mfs-4X3-0354-e8388819cafa4bae843ea433258aa03d.jpg",
+    "ingredients": [
+      { "name": "Cucumber", "quantity": "1, sliced" },
+      { "name": "Tomato", "quantity": "2, chopped" },
+      { "name": "Red onion", "quantity": "1/2, sliced" },
+      { "name": "Feta cheese", "quantity": "100g, crumbled" },
+      { "name": "Olives", "quantity": "1/2 cup" },
+      { "name": "Olive oil", "quantity": "2 tbsp" },
+      { "name": "Lemon juice", "quantity": "1 tbsp" },
+      { "name": "Salt and pepper", "quantity": "to taste" }
+    ],
+    "prepTime": 15,
+    "servings": 4,
+    "category": "Lunch",
+    "steps": [
+      {
+        "name": "Prepare vegetables",
+        "description": "Chop cucumber, tomato, and red onion."
+      },
+      {
+        "name": "Assemble salad",
+        "description": "In a bowl, combine cucumber, tomato, red onion, feta cheese, and olives. Drizzle with olive oil and lemon juice. Season with salt and pepper."
+      }
+    ]
+  }
+]
