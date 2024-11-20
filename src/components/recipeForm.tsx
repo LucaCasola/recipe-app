@@ -103,7 +103,7 @@ export function RecipeForm() {
   
         if (response.ok) {
           console.log('Recipe saved successfully');
-          //router.push('/collection');
+          router.push('/collection');
         } else {
           console.error('Failed to save recipe');
         }
@@ -120,7 +120,7 @@ export function RecipeForm() {
   
       if (response.ok) {
         console.log('Recipe saved successfully');
-        //router.push('/collection');
+        router.push('/collection');
       } else {
         console.error('Failed to save recipe');
       }
