@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
+//import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(req) {
   const data = await req.json(); // Parse the JSON body
@@ -10,7 +10,7 @@ export async function POST(req) {
   const filePath = path.join(process.cwd(), 'src/app/recipes.json');  // Define the file path to the recipes.json file
   const fileContents = fs.readFileSync(filePath, 'utf8');  // Read the contents of the recipes.json file
   const recipes = JSON.parse(fileContents);  // Parse the JSON data into a JavaScript object
-
+/*
   // Save the image to the assets folder if available
   if (data.imgUrl != "NA") {
     const base64Data = data.imgUrl.split(',')[1]; // Extract the Base64 data
@@ -22,11 +22,11 @@ export async function POST(req) {
     fs.writeFileSync(imagePath, imageBuffer); // Save the binary buffer to a file
     imgUrl = `/assets/${imageName}`;
   }
-
+*/
   // Assign an ID based on the number of existing recipes
   const newId = recipes.length + 1;
 
-  const newRecipe = { id: newId.toString(), ...data, imgUrl };
+  const newRecipe = { id: newId.toString(), ...data };
   recipes.push(newRecipe);
   fs.writeFileSync(filePath, JSON.stringify(recipes, null, 2));
 
