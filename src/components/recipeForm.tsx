@@ -62,7 +62,7 @@ export function RecipeForm() {
     defaultValues: {
       name: "",
       description: "",
-      imgUrl: "",
+      imgUrl: "NA",
       ingredients: [{ name: "", quantity: "" }],
       steps: [{ name: "", description: "" }]
     },
