@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, useFieldArray } from "react-hook-form"
 import { z } from "zod"
 import { useState } from "react"
+import { useRouter } from 'next/navigation';
 
 // UI Components
 import { Button } from "@/components/ui/button"
@@ -29,6 +30,7 @@ const formSchema = z.object({
   prepTime: z.number().min(1, {
     message: "Preparation time must be at least 1 minute.",
   }),
+  imgUrl: z.string().optional(),
   servings: z.number().min(1, {
     message: "Servings must be at least 1",
   }),
@@ -60,6 +62,7 @@ export function RecipeForm() {
     defaultValues: {
       name: "",
       description: "",
+      imgUrl: "",
       ingredients: [{ name: "", quantity: "" }],
       steps: [{ name: "", description: "" }]
     },
@@ -75,12 +78,54 @@ export function RecipeForm() {
     name: "steps",
   })
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
+  const router = useRouter();
+
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    // Convert servings and prepTime to numbers
     data.servings = Number(data.servings);
     data.prepTime = Number(data.prepTime);
-    
-    console.log("Recipe saved:", data, image)  // Simulate saving to recipes.json
-  }
+  
+    // Add image URL to the data if available
+    if (image) {
+      const reader = new FileReader();
+      reader.readAsDataURL(image);
+      reader.onloadend = async () => {
+        data.imgUrl = reader.result as string;
+  
+        // Call the API route to save the data
+        const response = await fetch('/api/submitRecipe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+  
+        if (response.ok) {
+          console.log('Recipe saved successfully');
+          //router.push('/collection');
+        } else {
+          console.error('Failed to save recipe');
+        }
+      };
+    } else {
+      // Call the API route to save the data without image
+      const response = await fetch('/api/submitRecipe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+  
+      if (response.ok) {
+        console.log('Recipe saved successfully');
+        //router.push('/collection');
+      } else {
+        console.error('Failed to save recipe');
+      }
+    }
+  };
 
   function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files && e.target.files[0]) {
@@ -126,18 +171,18 @@ export function RecipeForm() {
           <div className="relative flex flex-col flex-shrink-0 h-64 w-64 items-center justify-center gap-4 bg-foreground border-2 border-black rounded-2xl overflow-hidden">
             {image ? (
               <>
-              <img src={URL.createObjectURL(image)} alt="Uploaded" className="h-full w-full object-cover" />
-              <label className="bg-foreground rounded-lg absolute bottom-2 right-2 flex flex-col items-center justify-center cursor-pointer">
-                <Upload className="h-12 w-12" />
-                <input type="file" onChange={handleImageChange} className="hidden" />
-              </label>
+                <img src={URL.createObjectURL(image)} alt="Uploaded" className="h-full w-full object-cover" />
+                <label className="bg-foreground rounded-lg absolute bottom-2 right-2 flex flex-col items-center justify-center cursor-pointer">
+                  <Upload className="h-12 w-12" />
+                  <input type="file" onChange={handleImageChange} className="hidden" />
+                </label>
               </>
             ) : (
               <label className="flex flex-col items-center justify-center cursor-pointer">
-              <Upload className="h-20 w-20" />
-              <span>Upload Image</span>
-              <input type="file" onChange={handleImageChange} className="hidden" />
-            </label>
+                <Upload className="h-20 w-20" />
+                <span>Upload Image</span>
+                <input type="file" onChange={handleImageChange} className="hidden" />
+              </label>
             )}
           </div>
         </div>
@@ -165,30 +210,33 @@ export function RecipeForm() {
           />
           
           <FormField
-              control={form.control}
-              name="category"
-              render={({ field }) => (
-                <FormItem>
-                  <section className="flex flex-row items-center gap-2">
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <FormItem>
+                <section className="flex flex-row items-center gap-2">
                   <ChefHat className="w-6 h-6"/>
                   <FormLabel>Category</FormLabel>
                 </section>
-                  <FormControl>
-                    <Select {...field}>
-                      <SelectTrigger className="w-[185px]">
-                        <SelectValue placeholder="Select a category" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="light">Breakfast</SelectItem>
-                        <SelectItem value="dark">Lunch</SelectItem>
-                        <SelectItem value="system">Dinner</SelectItem>
-                        <SelectItem value="system">Dessert</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+                <FormControl>
+                  <Select
+                    value={field.value}
+                    onValueChange={field.onChange}
+                  >
+                    <SelectTrigger className="w-[185px]">
+                      <SelectValue placeholder="Select a category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Breakfast">Breakfast</SelectItem>
+                      <SelectItem value="Lunch">Lunch</SelectItem>
+                      <SelectItem value="Dinner">Dinner</SelectItem>
+                      <SelectItem value="Dessert">Dessert</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
 
           <FormField

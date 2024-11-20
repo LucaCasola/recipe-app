@@ -44,11 +44,19 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
         </section>
       </CardHeader>
       <CardContent>
-        <img 
-          src={recipe.imgUrl} 
-          alt={`image of ${recipe.name}`} 
-          className="w-full h-64 max-w-xs object-cover rounded-lg mx-auto mb-5"
-        />
+        { (recipe.imgUrl.startsWith('http') || recipe.imgUrl.startsWith('/assets')) ? (
+          <img 
+            src={recipe.imgUrl} 
+            alt={`image of ${recipe.name}`} 
+            className="w-full h-64 max-w-xs object-cover rounded-lg mx-auto mb-5"
+          />
+        ) : (
+          <img 
+            src="/assets/placeholder.png" 
+            alt={recipe.name} 
+            className="w-32 h-32 object-cover rounded-lg mb-2"
+          />
+        )}
         <div className="flex flex-wrap">
           <p className="font-bold mr-2">Ingredients:</p>
           {recipe.ingredients.map((ingredient, index) => (

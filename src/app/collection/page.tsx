@@ -26,11 +26,19 @@ export default function CollectionPage() {
             <div className="flex flex-row gap-8">
               {filteredRecipes.map((recipe: Recipe) => (
                 <div key={recipe.id} className="flex flex-col w-40 items-center">
-                  <img 
-                    src={recipe.imgUrl} 
-                    alt={recipe.name} 
-                    className="w-32 h-32 object-cover rounded-lg mb-2"
-                  />
+                  { (recipe.imgUrl.startsWith('http') || recipe.imgUrl.startsWith('/assets')) ? (
+                    <img 
+                      src={recipe.imgUrl} 
+                      alt={recipe.name} 
+                      className="w-32 h-32 object-cover rounded-lg mb-2"
+                    />
+                  ) : (
+                    <img 
+                      src="/assets/placeholder.png" 
+                      alt={recipe.name} 
+                      className="w-32 h-32 object-cover rounded-lg mb-2"
+                    />
+                  )}
                   <p className="text-center">{recipe.name}</p>
                 </div>
               ))}
