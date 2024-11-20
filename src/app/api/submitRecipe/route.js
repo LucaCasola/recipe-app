@@ -12,7 +12,7 @@ export async function POST(req) {
   const recipes = JSON.parse(fileContents);  // Parse the JSON data into a JavaScript object
 
   // Save the image to the assets folder if available
-  let imgUrl = '';
+  /*let imgUrl = '';
   if (data.imgUrl) {
     const base64Data = data.imgUrl.split(',')[1]; // Extract the Base64 data
     const mimeType = data.imgUrl.match(/data:(.*?);base64/)[1]; // Extract the MIME type
@@ -22,7 +22,7 @@ export async function POST(req) {
     const imageBuffer = Buffer.from(base64Data, 'base64'); // Convert Base64 to binary buffer
     fs.writeFileSync(imagePath, imageBuffer); // Save the binary buffer to a file
     imgUrl = `/assets/${imageName}`;
-  }
+  }*/
 
   // Assign an ID based on the number of existing recipes
   const newId = recipes.length + 1;
