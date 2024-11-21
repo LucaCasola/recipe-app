@@ -26,6 +26,7 @@ export default function CollectionPage() {
             <div className="flex flex-row gap-8">
               {filteredRecipes.map((recipe: Recipe) => (
                 <div key={recipe.id} className="flex flex-col w-40 items-center">
+                  <a href={`collection/recipe/${recipe.id}`}>
                   { (recipe.imgUrl.startsWith('http') || recipe.imgUrl.startsWith('/assets')) ? (
                     <img 
                       src={recipe.imgUrl} 
@@ -39,6 +40,7 @@ export default function CollectionPage() {
                       className="w-32 h-32 object-cover rounded-lg mb-2"
                     />
                   )}
+                  </a>
                   <p className="text-center">{recipe.name}</p>
                 </div>
               ))}

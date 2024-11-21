@@ -81,6 +81,8 @@ export function RecipeForm() {
   const router = useRouter();
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    alert("Recipe Creation Complete (recipes are not saved in this demo)");
+    /*
     // Convert servings and prepTime to numbers
     data.servings = Number(data.servings);
     data.prepTime = Number(data.prepTime);
@@ -125,6 +127,7 @@ export function RecipeForm() {
         console.error('Failed to save recipe');
       }
     }
+      */
   };
 
   function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
