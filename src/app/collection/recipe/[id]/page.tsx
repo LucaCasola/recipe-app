@@ -3,16 +3,20 @@
 import { Recipe } from "@/types";
 import { useState, useEffect } from "react";
 import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Timer, Utensils, ChefHat, ArrowLeft } from 'lucide-react'; // Icons
+import { Timer, Utensils, ChefHat, ArrowLeft, PenLine, Send } from 'lucide-react'; // Icons
 import { convertMinutesToHoursAndMinutes } from '@/components/recipeCard';
 import recipes from "@/app/recipes.json";  //import recipe data
+import { Button } from "@/components/ui/button";
 
 
 export default function RecipePage() {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const { id } = useParams();
   
+  const router = useRouter();
+
   useEffect(() => {
     if (id) {
       const foundRecipe = recipes.find((r) => r.id === id);
@@ -58,6 +62,17 @@ export default function RecipePage() {
                   <span>{recipe.category}</span>
                 </div>
                 <CardDescription>{recipe.description}</CardDescription>
+
+                <div className="flex flex-row items-center justify-between mt-10">
+                <Button className="w-min gap-2 pl-3 pr-3">
+                  <span>Share </span>
+                  <Send size={24} />
+                </Button>
+                <Button className="w-min gap-2 pl-3 pr-3" onClick={() => router.push(`/createRecipe/${recipe.id}`)}>
+                  <span>Edit </span>
+                  <PenLine color="white" size={24} />
+                </Button>
+                </div>
               </section>
             </div>
 

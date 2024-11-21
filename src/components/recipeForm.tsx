@@ -3,7 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, useFieldArray } from "react-hook-form"
 import { z } from "zod"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import recipes from "@/app/recipes.json"; //import data
 //import { useRouter } from 'next/navigation';
 
 // UI Components
@@ -55,7 +56,7 @@ const formSchema = z.object({
   })),
 })
 
-export function RecipeForm() {
+export function RecipeForm({ recipeId }: { recipeId?: string }) {
   const [image, setImage] = useState<File | null>(null)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -78,6 +79,25 @@ export function RecipeForm() {
     name: "steps",
   })
 
+  useEffect(() => {
+    if (recipeId) {
+      const foundRecipe = recipes.find((r) => r.id === recipeId.toString());
+      if (!foundRecipe) {
+        return;
+      }
+      console.log("Found recipe" ,foundRecipe);
+      // Set the form values with the fetched data
+      form.reset({
+        name: foundRecipe.name,
+        description: foundRecipe.description,
+        imgUrl: foundRecipe.imgUrl,
+        servings: foundRecipe.servings,
+        ingredients: foundRecipe.ingredients,
+        steps: foundRecipe.steps,
+        prepTime: foundRecipe.prepTime,
+      });
+    };
+  }, [recipeId, form]);
   //const router = useRouter();
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
