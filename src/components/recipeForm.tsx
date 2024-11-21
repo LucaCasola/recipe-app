@@ -102,6 +102,7 @@ export function RecipeForm({ recipeId }: { recipeId?: string }) {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     alert("Recipe Creation Complete (recipes are not saved in this demo)");
+    console.log(data);
     /*
     // Convert servings and prepTime to numbers
     data.servings = Number(data.servings);
